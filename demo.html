@@ -7,14 +7,24 @@
   <script src="lib/advanced-search-query-creator.js"></script>
   <script src="demo/demo.js"></script>
 
-  <link type="text/css" rel="stylesheet" media="all" href="css/backbone-file-explorer.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="css/advanced-search-query-creator.css" />
   <link type="text/css" rel="stylesheet" media="all" href="demo/css/style.css" />
 </head>
 
 <body>
+<div id='search_form'></div>
 </body>
 
 <script>
+var search = new advancedSearch.AdvancedSearchView({
+  el: $('#search_form'),
+});
+search.addSelect('op', 'boolean operator', {title: 'BOOLEAN OPERATOR'}, {
+  'and': 'and',
+  'or': 'or',
+  'not': 'not'
+});
+$('body').append(search.render());
 </script>
 
 </html>
