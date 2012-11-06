@@ -19,11 +19,19 @@
 var search = new advancedSearch.AdvancedSearchView({
   el: $('#search_form'),
 });
+
 search.addSelect('op', 'boolean operator', {title: 'BOOLEAN OPERATOR'}, {
   'and': 'and',
   'or': 'or',
   'not': 'not'
 });
+
+search.addSelect('field', 'boolean operator', {title: 'BOOLEAN OPERATOR'}, {
+  'aipname': 'AIP name',
+  'filename': 'File name',
+  'uuid': 'UUID'
+});
+
 $('body').append(search.render());
 </script>
 
