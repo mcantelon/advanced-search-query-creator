@@ -1,6 +1,11 @@
 function demo() {
   var search = new advancedSearch.AdvancedSearchView({
     el: $('#search_form'),
+    data: [{
+      'op[]': 'or',
+      'query[]': 'bob',
+      'field[]': 'aipname'
+    }]
   });
 
   search.addSelect('op[]', 'boolean operator', {title: 'boolean operator'}, {
