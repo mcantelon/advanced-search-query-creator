@@ -23,4 +23,8 @@ function demo() {
   });
 
   $('body').append(search.render());
+
+  $('#url_conversion_button').click(function (){
+    $('#url_result').text(search.toUrlParams());
+  });
 }
