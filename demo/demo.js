@@ -30,8 +30,7 @@ function demo() {
     return rowIndex > 0 || fieldName != 'op[]';
   };
 
-  // render HTML
-  $('body').append(search.render());
+  search.render()
 
   // demonstrate conversion to URL params
   $('#url_conversion_button').click(function (){
