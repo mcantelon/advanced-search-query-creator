@@ -3,23 +3,23 @@ function demo() {
   var search = new advancedSearch.AdvancedSearchView({
     el: $('#search_form'),
     data: [{
-      'query[]': 'bob',
-      'field[]': 'aipname'
+      'query': 'bob',
+      'field': 'aipname'
     }]
   });
 
   // define op field
-  search.addSelect('op[]', 'boolean operator', {title: 'boolean operator'}, {
+  search.addSelect('op', 'boolean operator', {title: 'boolean operator'}, {
     'and': 'and',
     'or': 'or',
     'not': 'not'
   });
 
   // define query field
-  search.addInput('query[]', 'search query', {title: 'search query'});
+  search.addInput('query', 'search query', {title: 'search query'});
 
   // default field name field
-  search.addSelect('field[]', 'field name', {title: 'field name'}, {
+  search.addSelect('field', 'field name', {title: 'field name'}, {
     'aipname': 'AIP name',
     'filename': 'File name',
     'uuid': 'UUID'
@@ -27,7 +27,7 @@ function demo() {
 
   // don't show first op field
   search.fieldVisibilityCheck = function(rowIndex, fieldName) {
-    return rowIndex > 0 || fieldName != 'op[]';
+    return rowIndex > 0 || fieldName != 'op';
   };
 
   search.render()
