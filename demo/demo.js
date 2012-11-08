@@ -2,11 +2,16 @@ function demo() {
   // create new form instance, providing a single row of default data
   var search = new advancedSearch.AdvancedSearchView({
     el: $('#search_form'),
-    data: [{
+    rows: [{
       'query': 'bob',
       'field': 'aipname'
     }]
   });
+
+  if (search.urlParamsToData()) {
+    alert('Setting row data from URL params...');
+    search.rows = search.urlParamsToData();
+  }
 
   // define op field
   search.addSelect('op', 'boolean operator', {title: 'boolean operator'}, {
@@ -33,7 +38,7 @@ function demo() {
   search.render()
 
   // demonstrate conversion to URL params
-  $('#url_conversion_button').click(function (){
-    $('#url_result').text(search.toUrlParams());
+  $('#search_submit_button').click(function (){
+    window.location = window.location.pathname + '?' + search.toUrlParams();
   });
 }
