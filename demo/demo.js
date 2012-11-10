@@ -8,33 +8,37 @@ function demo() {
     }]
   });
 
-  if (search.urlParamsToData()) {
-    alert('Setting row data from URL params...');
-    search.rows = search.urlParamsToData();
-  }
-
-  // define op field
+  // define search op field
   search.addSelect('op', 'boolean operator', {title: 'boolean operator'}, {
     'and': 'and',
     'or': 'or',
     'not': 'not'
   });
 
-  // define query field
+  // define search text field
   search.addInput('query', 'search query', {title: 'search query'});
 
-  // default field name field
+  // define search field name field
   search.addSelect('field', 'field name', {title: 'field name'}, {
     'aipname': 'AIP name',
     'filename': 'File name',
     'uuid': 'UUID'
   });
 
-  // don't show first op field
+  // define field visibility logic (in this case don't show first op field)
   search.fieldVisibilityCheck = function(rowIndex, fieldName) {
     return rowIndex > 0 || fieldName != 'op';
   };
 
+  // with fields and field visibility defined, search form state can be
+  // derived from URL parameter (making it easy to initialize the search
+  // form after a page reload
+  if (search.urlParamsToData()) {
+    alert('Setting row data from URL params...');
+    search.rows = search.urlParamsToData();
+  }
+
+  // render search form
   search.render()
 
   // demonstrate conversion to URL params
