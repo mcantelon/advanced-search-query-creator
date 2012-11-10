@@ -9,17 +9,17 @@ function demo() {
   });
 
   // define search op field
-  search.addSelect('op', 'boolean operator', {title: 'boolean operator'}, {
+  search.addSelect('op', {title: 'boolean operator'}, {
     'and': 'and',
     'or': 'or',
     'not': 'not'
   });
 
   // define search text field
-  search.addInput('query', 'search query', {title: 'search query'});
+  search.addInput('query', {title: 'search query'});
 
   // define search field name field
-  search.addSelect('field', 'field name', {title: 'field name'}, {
+  search.addSelect('field', {title: 'field name'}, {
     'aipname': 'AIP name',
     'filename': 'File name',
     'uuid': 'UUID'

@@ -11,3 +11,7 @@ upon page reload.
 
 Open demo.html in a web browser to get a quick demo. The logic for the demo is
 in demo/demo.js.
+
+Defining search clauses
+
+
