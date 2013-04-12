@@ -5,7 +5,9 @@ function demo() {
     rows: [{
       'query': 'bob',
       'field': 'aipname'
-    }]
+    }],
+    'deleteHandleHtml': 'Delete',
+    'addHandleHtml': 'Add new row'
   });
 
   // define search op field
